@@ -13,6 +13,11 @@
   --color-hairline-soft: rgba(22, 24, 29, 0.08); /* 更浅线 */
   --color-hairline-dark: rgba(255, 255, 255, 0.14); /* 深色分区发丝线 */
 
+  /* 吸顶导航背景（随主题变化） */
+  --color-header-bg: rgba(247, 245, 242, 0.82);
+  /* 卡片/标签浅色表面 */
+  --color-surface: #FFFFFF;
+
   /* 单一强调色 */
   --color-accent: #FF4A1C;
   --color-accent-soft: rgba(255, 74, 28, 0.10);
@@ -32,6 +37,19 @@
   --font-serif: "Songti SC", "Noto Serif SC", Georgia, "Times New Roman", serif;
 }
 
+/* ===== 深色主题（通过 <html data-theme="dark"> 启用） ===== */
+[data-theme="dark"] {
+  --color-bg: #17181C;              /* 深底主色 */
+  --color-bg-soft: #212228;         /* 次级区块底 */
+  --color-text: #E9EAEE;            /* 正文 */
+  --color-text-soft: #A9ADB8;       /* 弱化文字 */
+  --color-muted: #6E7280;           /* 更弱文字 */
+  --color-hairline: rgba(255, 255, 255, 0.14);      /* 浅色分区发丝线 */
+  --color-hairline-soft: rgba(255, 255, 255, 0.08); /* 更浅线 */
+  --color-header-bg: rgba(23, 24, 28, 0.82);        /* 吸顶导航背景 */
+  --color-surface: #212228;         /* 卡片/标签表面 */
+}
+
 *,
 *::before,
 *::after {
@@ -41,6 +59,11 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+}
+
+/* 主题切换时主背景平滑过渡（避免覆盖子元素已有动画） */
+body {
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 body {

@@ -1,0 +1,173 @@
+/* ===== responsive.css · 1024 / 768 / 560 三档断点 ===== */
+
+/* ================= 平板端（≤1023px） ================= */
+@media (max-width: 1023px) {
+  /* 隐藏右侧进度轴 */
+  .progress {
+    display: none;
+  }
+
+  /* 主内容留出呼吸，避免贴边 */
+  .main {
+    padding: 0 var(--gutter);
+  }
+
+  /* 项目改为上下堆叠，取消图文交替 */
+  .project {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .project__media .aspect {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 序号水印收入媒体顶部，避免压在文字上方 */
+  .project__num {
+    top: auto;
+    right: auto;
+    bottom: -0.18em;
+    left: 0;
+    font-size: clamp(72px, 14vw, 140px);
+  }
+
+  /* Hero 信息栏收窄为上下排列 */
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* 关于我改为单列，取消吸顶 */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about__head {
+    position: static;
+    padding-right: 0;
+  }
+
+  .about__body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ================= 手机端（≤767px） ================= */
+@media (max-width: 767px) {
+  /* 桌面导航隐藏，显示汉堡按钮 */
+  .nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hero 字号收小 */
+  .hero__name {
+    font-size: clamp(46px, 15vw, 76px);
+  }
+
+  /* 移动端：头像移到大名字之前，尺寸缩小 */
+  .hero__top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .hero__heading {
+    flex-basis: auto;
+    order: 2;
+  }
+
+  .hero__portrait {
+    order: 1;
+    width: clamp(96px, 30vw, 140px);
+    border-radius: 18px;
+  }
+
+  .hero__tagline {
+    border-left-width: 2px;
+    padding-left: 14px;
+  }
+
+  .hero__facts li {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero__facts li span {
+    width: auto;
+  }
+
+  /* 技能分组纵向排列，取消竖线分栏 */
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .skills__group {
+    padding: 0 !important;
+  }
+
+  .skills__group + .skills__group {
+    border-left: none;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-hairline);
+  }
+
+  /* 项目竖排标题缩近 */
+  .project {
+    padding: 48px 0;
+  }
+
+  .project__desc {
+    -webkit-line-clamp: 3;
+  }
+
+  .project__links {
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  /* 板块间分隔线更碎，便于手机阅读 */
+  .section {
+    padding: 56px 0;
+  }
+
+  /* 联系页脚转纵向 */
+  .contact__foot {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  /* 超大邮箱字号缩小 */
+  .contact__email {
+    font-size: clamp(24px, 9vw, 40px);
+    word-break: break-all;
+  }
+}
+
+/* ================= 窄屏手机（≤559px） ================= */
+@media (max-width: 559px) {
+  .hero__tagline {
+    font-size: 16px;
+  }
+
+  .hero__intro p {
+    font-size: 15px;
+  }
+
+  .project__meta {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

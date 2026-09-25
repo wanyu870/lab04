@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>梁天驰 · 个人作品集</title>
+  <meta name="description" content="梁天驰的个人作品集网站：个人介绍、技能方向与项目作品。" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body id="top">
+
+  <!-- ===== 顶部吸顶导航 ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__bar">
+      <a class="brand" href="#intro">梁天驰</a>
+
+      <!-- 桌面导航 -->
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="#intro">介绍</a>
+        <a class="nav__link" href="#skills">技能</a>
+        <a class="nav__link" href="#work">作品</a>
+        <a class="nav__link" href="#about">关于</a>
+        <a class="nav__link" href="#contact">联系</a>
+      </nav>
+
+      <!-- 移动端菜单按钮 -->
+      <button class="nav-toggle" id="navToggle" aria-label="切换菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- 移动端抽屉 -->
+    <nav class="mobile-nav" id="mobileNav" hidden>
+      <a class="mobile-nav__link" href="#intro">介绍</a>
+      <a class="mobile-nav__link" href="#skills">技能</a>
+      <a class="mobile-nav__link" href="#work">作品</a>
+      <a class="mobile-nav__link" href="#about">关于</a>
+      <a class="mobile-nav__link" href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <!-- ===== 右侧竖向进度轴 ===== -->
+  <nav class="progress" id="progress" aria-label="区块进度导航">
+    <a class="progress__dot" href="#intro" data-section="intro"><span>介绍</span></a>
+    <a class="progress__dot" href="#skills" data-section="skills"><span>技能</span></a>
+    <a class="progress__dot" href="#work" data-section="work"><span>作品</span></a>
+    <a class="progress__dot" href="#about" data-section="about"><span>关于</span></a>
+    <a class="progress__dot" href="#contact" data-section="contact"><span>联系</span></a>
+  </nav>
+
+  <main class="main">
+
+    <!-- ===== 1. 个人介绍 Hero ===== -->
+    <section class="section hero" id="intro">
+      <div class="hero__top">
+        <div class="hero__heading">
+          <h1 class="hero__name">梁天驰 <em>Nicholas</em></h1>
+          <p class="hero__tagline">前端工程师 · 用代码编排清晰的界面与叙事</p>
+        </div>
+
+        <div class="hero__portrait" data-reveal>
+          <img src="assets/images/avatar.jpg" alt="梁天驰 个人照片" />
+        </div>
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__intro" data-reveal>
+          <p>我是一名前端工程师，喜欢把复杂的问题梳理成干净、有节奏的界面。</p>
+          <p>工作之余热衷研究现代 CSS 与原生 JavaScript，相信好的页面既能打动感官，也经得起细节与性能的推敲。</p>
+          <p>本页展示了我的技能方向与部分作品，期待与你交流。</p>
+        </div>
+        <ul class="hero__facts" data-reveal>
+          <li><span>所在地</span> 中国 · 上海</li>
+          <li><span>当前状态</span> 开放项目合作</li>
+          <li><span>邮箱</span> <a href="mailto:hello@linyi.dev">hello@linyi.dev</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 2. 技能方向 ===== -->
+    <section class="section section--soft" id="skills">
+      <div class="section__head">
+        <span class="section__label">Skills</span>
+        <h2 class="section__title">技能方向</h2>
+      </div>
+
+      <div class="skills">
+        <div class="skills__group" data-reveal>
+          <h3 class="skills__group-title">前端</h3>
+          <ul class="tags">
+            <li class="tag">HTML</li>
+            <li class="tag">CSS</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">响应式布局</li>
+            <li class="tag">性能优化</li>
+          </ul>
+        </div>
+
+        <div class="skills__group" data-reveal>
+          <h3 class="skills__group-title">设计</h3>
+          <ul class="tags">
+            <li class="tag">界面设计</li>
+            <li class="tag">排版</li>
+            <li class="tag">动效</li>
+            <li class="tag">设计系统</li>
+          </ul>
+        </div>
+
+        <div class="skills__group" data-reveal>
+          <h3 class="skills__group-title">工具与其他</h3>
+          <ul class="tags">
+            <li class="tag">Git</li>
+            <li class="tag">Figma</li>
+            <li class="tag">可访问性</li>
+            <li class="tag">写作</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. 项目作品 ===== -->
+    <section class="section" id="work">
+      <div class="section__head">
+        <span class="section__label">Portfolio</span>
+        <h2 class="section__title">项目作品</h2>
+        <p class="section__desc">部分亲手完成的项目，从想法到落地。</p>
+      </div>
+
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <!-- ===== 4. 关于我（深色渐变） ===== -->
+    <section class="section about-section" id="about">
+      <div class="about">
+        <div class="about__head" data-reveal>
+          <span class="section__label">About</span>
+          <h2 class="section__title">关于我</h2>
+          <p class="about__lead">比起堆满内容，我更在意让每件事都拥有清晰的位置与节奏。</p>
+        </div>
+
+        <div class="about__body">
+          <div class="about__narrative" data-reveal>
+            <p>我关注信息如何被组织、排版与呈现。比起堆砌元素，我更在意取舍，让内容在页面中拥有清晰的呼吸感。</p>
+            <p>过去几年，我从零搭建并打磨过多类前端项目，涵盖作品集、内容型站点到工具类页面，逐渐沉淀出「先理清结构、再处理细节」的工作方式。</p>
+            <p>当前主要精力放在 Web 端体验上，同时持续在设计与工程之间寻找平衡。</p>
+
+            <div class="about__focus">
+              <h3 class="about__subtitle">关注方向</h3>
+              <ul class="about__list">
+                <li>现代 CSS 布局与交互形态</li>
+                <li>原生 JavaScript 与可访问性</li>
+                <li>信息架构与内容节奏</li>
+              </ul>
+            </div>
+          </div>
+
+          <dl class="about__facts" data-reveal>
+            <div class="about__fact">
+              <dt>教育背景</dt>
+              <dd>上海某大学 · 计算机科学（本科）</dd>
+            </div>
+            <div class="about__fact">
+              <dt>经历</dt>
+              <dd>前端工程师 · 2 年；独立项目若干</dd>
+            </div>
+            <div class="about__fact">
+              <dt>兴趣</dt>
+              <dd>摄影 · 阅读 · 写作</dd>
+            </div>
+            <div class="about__fact">
+              <dt>正在做</dt>
+              <dd>打磨个人设计系统与新的作品集</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. 联系方式（深色） ===== -->
+    <section class="section section--dark" id="contact">
+      <div class="section__head section__head--dark">
+        <span class="section__label">Contact</span>
+        <h2 class="section__title">联系方式</h2>
+      </div>
+
+      <a class="contact__email" href="mailto:hello@linyi.dev" data-reveal>
+        hello@linyi.dev
+      </a>
+
+      <div class="contact__links">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" rel="noopener">微信</a>
+        <a href="https://dribbble.com/" target="_blank" rel="noopener">Dribbble</a>
+        <a href="https://weibo.com/" target="_blank" rel="noopener">微博</a>
+      </div>
+
+      <footer class="contact__foot">
+        <span>© 2026 梁天驰</span>
+        <a href="#top" class="to-top">回到顶部 ↑</a>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="js/projects-data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

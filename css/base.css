@@ -1,0 +1,138 @@
+/* ===== base.css · 变量 / 重置 / 排版尺度 ===== */
+
+:root {
+  /* 底色与文字 */
+  --color-bg: #F7F5F2;            /* 暖白主底 */
+  --color-bg-soft: #F0EDE6;       /* 次级区块底 */
+  --color-dark: #16181D;          /* 深色块（近黑，非纯黑） */
+  --color-dark-soft: #1F232B;     /* 深色次级 */
+  --color-text: #24252B;          /* 正文 */
+  --color-text-soft: #5B5E66;     /* 弱化文字 */
+  --color-muted: #9A9DA5;         /* 更弱文字 */
+  --color-hairline: rgba(22, 24, 29, 0.14);      /* 浅色分区发丝线 */
+  --color-hairline-soft: rgba(22, 24, 29, 0.08); /* 更浅线 */
+  --color-hairline-dark: rgba(255, 255, 255, 0.14); /* 深色分区发丝线 */
+
+  /* 单一强调色 */
+  --color-accent: #FF4A1C;
+  --color-accent-soft: rgba(255, 74, 28, 0.10);
+  --color-on-dark: #FFFFFF;
+  --color-on-dark-muted: rgba(255, 255, 255, 0.62);
+
+  /* 尺寸与间距 */
+  --nav-h: 68px;
+  --max-w: 1180px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --pad-section: clamp(72px, 9vw, 128px);
+  --radius: 14px;
+
+  /* 字体 */
+  --font-sans: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Songti SC", "Noto Serif SC", Georgia, "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- 排版尺度 ---------- */
+.section__label {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.section__title {
+  font-size: clamp(30px, 4.5vw, 46px);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.section__desc {
+  margin-top: 14px;
+  max-width: 560px;
+  color: var(--color-text-soft);
+}
+
+/* 通栏发丝线 */
+.section + .section {
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* 深色分区衔接 */
+.section--dark {
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+  border-top: none !important;
+}
+
+.section--dark .section__title {
+  color: var(--color-on-dark);
+}
+
+.section--dark .section__desc {
+  color: var(--color-on-dark-muted);
+}
+
+/* 尊重系统减少动效 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
